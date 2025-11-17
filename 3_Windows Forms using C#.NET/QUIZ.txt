@@ -1,0 +1,306 @@
+
+.NET 
+
+Windows Forms using C# .NET
+
+Quiz  
+
+1 - 1
+Exceptional Handling handles which errors
+2 Marks
+Run time errors
+Compile time rrors
+Both A and B
+Environment errors
+Run time errors
+
+Explanation:
+
+In .NET, Exception Handling is specifically designed to handle runtime errors — situations that occur when the program is running, such as:
+
+Division by zero
+
+File not found
+
+Null reference
+
+Out-of-range array access
+
+These errors cannot always be predicted or checked at compile time.
+
+Compile-time errors (like syntax mistakes, missing semicolons, type mismatches) are detected by the compiler before the program runs, so they are not handled by Exception Handling.
+
+Environment errors (like hardware failure, power outage) are outside the scope of .NET's Exception Handling.
+
+✅ So the correct option is A. Run time errors.
+
+2 - 
+Installation Guide
+Introduction to .NET
+Introduction to C# and Oops using C#.NET
+Windows Forms using C#.NET
+Part 1: Errors and ExceptionsPart 2: Deligates, Properties and IndexersPart 3: Creating Windows ApplicationPart 4: GUI controls in Windows ApplicationsPresentationQuiz IIIAssignmentDemo
+ADO.NET- Data Access from SQL
+Collections and Assemblies
+ASP.NET
+Web Server Controls
+LINQ, Web Architecture
+State Management, Ajax
+Security and Web services
+Certification Project
+2
+Which is correct regarding Exceptional Handling
+2 Marks
+Has only 1 Try block
+Contains more than 1 catch block
+Has only 1 catch block
+Both A & B
+
+3 - 
+3
+Which methods are protecting the members of class
+2 Marks
+Get
+Set
+Both A and B
+None of the above
+
+Both A and B ✅
+
+Explanation:
+
+In C#, properties are used to protect and control access to class members (usually private fields).
+
+The get method is used to read the value of a private member.
+
+The set method is used to assign a value, with the option to add validation or restrictions.
+
+Together, get and set methods encapsulate the fields and protect the members of the class from direct and unsafe access.
+
+Example:
+class Student
+{
+    private int age;
+
+    public int Age
+    {
+        get { return age; }         // Protects by allowing controlled read
+        set 
+        { 
+            if (value > 0)          // Validation before setting
+                age = value; 
+        }
+    }
+}
+
+
+Here, both get and set protect the private field age.
+
+👉 So the correct option is Both A and B.
+
+
+4 - 4
+Radio button is a ?
+2 Marks
+Multicontrol unit
+Multineutral unit
+Both A and B
+x Single control unit
+
+Single control unit ✅
+
+Explanation:
+
+A Radio Button in Windows Forms / ASP.NET / GUI programming allows the user to select only one option from a group of choices.
+
+If you place multiple radio buttons in the same group (or container like a GroupBox), only one can be selected at a time.
+
+This makes it a single control unit, unlike checkboxes which allow multiple selections.
+
+👉 Correct option: Single control unit.
+
+5 - 5
+Which control helps to display datatable as output
+2 Marks
+ListBox
+x Gridview
+ComboBox
+DataBox
+
+GridView ✅
+
+Explanation:
+
+In .NET (especially ASP.NET and Windows Forms), the GridView control is used to display data in a tabular format (rows and columns).
+
+It can be easily bound to a DataTable, DataSet, or database to show structured data.
+
+Other options:
+
+ListBox → Displays a simple list of items (single column).
+
+ComboBox → Displays a dropdown list.
+
+DataBox → ❌ Not an actual .NET control.
+
+👉 So, the right answer is GridView.
+
+6 - 6
+Which control helps to display one item from list of items
+2 Marks
+ListBox
+x ComboBox
+DialogBox
+PictureBox
+
+ComboBox ✅
+
+Explanation:
+
+A ComboBox control in C# / .NET is used to display a list of items, but allows the user to select only one item at a time.
+
+It combines the features of a TextBox (can show one value) and a ListBox (contains multiple items).
+
+Other options:
+
+ListBox → Displays multiple items, and user can select one or more (depending on SelectionMode).
+
+DialogBox → Used for user interaction (e.g., Open File dialog), not for list selection.
+
+PictureBox → Used to display images, not list items.
+
+👉 Correct choice: ComboBox.
+
+7 - 7
+select correct Syntax for messagebox
+2 Marks
+x MessageBox.show("Hello");
+MessageBox.display("Hello");
+MessageBox.Look("hello");
+None of the above
+
+MessageBox.Show("Hello");
+
+8 - 8
+What are Events
+2 Marks
+Program actions
+Application actions
+x User actions
+Empty actions
+
+
+User actions ✅
+
+Explanation:
+
+In C# / .NET, events are mechanisms that let a class or object notify other classes or objects when something of interest happens.
+
+These “happenings” are typically user actions such as:
+
+Clicking a button
+
+Typing in a textbox
+
+Selecting an item from a list
+
+Moving the mouse
+
+Events are based on the publisher-subscriber model:
+
+The publisher raises the event.
+
+The subscribers handle the event with event handlers (delegate methods).
+
+👉 So, the correct answer is User actions.
+
+
+9 - What is Delegate
+2 Marks
+x 
+Type safe function pointer
+Instance pointer
+A pointer to class
+type unsafe function pointer
+
+
+Type safe function pointer ✅
+
+Explanation:
+
+In C#, a delegate is a type-safe function pointer.
+
+It can reference a method with a specific signature (return type + parameters).
+
+Being type-safe means the compiler checks that the delegate’s signature matches the method it points to.
+
+Delegates are commonly used in events and callbacks.
+
+
+
+// Delegate declaration
+public delegate void MyDelegate(string message);
+
+// Method to point to
+public void ShowMessage(string msg)
+{
+    Console.WriteLine(msg);
+}
+
+// Usage
+MyDelegate del = ShowMessage;
+del("Hello from delegate!");
+
+👉 So, unlike C/C++ function pointers (which are unsafe), delegates in C# are type safe.
+
+
+
+
+10 - Indexers are created using which keyword
+2 Marks
+Index
+static
+final
+this
+
+this ✅
+
+Explanation:
+
+In C#, an indexer allows objects of a class to be accessed like arrays using the [] operator.
+
+Indexers are created using the this keyword along with parameters.
+
+Syntax example:
+class Sample
+{
+    private string[] data = new string[5];
+
+    // Indexer using 'this'
+    public string this[int index]
+    {
+        get { return data[index]; }
+        set { data[index] = value; }
+    }
+}
+
+Usage: 
+Sample obj = new Sample();
+obj[0] = "Hello";         // calls set
+Console.WriteLine(obj[0]); // calls get
+
+
+Other options:
+
+Index ❌ → Not a valid keyword.
+
+static ❌ → Used for static members.
+
+final ❌ → C# doesn’t use final (Java does).
+
+👉 Correct answer: this.
+
+
+
+
+
