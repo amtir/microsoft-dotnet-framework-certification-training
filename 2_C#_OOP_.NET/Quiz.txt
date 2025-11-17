@@ -1,0 +1,294 @@
+
+Quiz Inroduction to C# .NET OOP
+
+1 - 1
+Which  language allows more than one method in a single class.
+2 Marks
+C#
+JAVA
+C++
+C
+
+All four (C#, Java, C++, and C) are different in how they treat methods inside a class.
+C# ✅ → allows multiple methods in a single class.
+Java ✅ → allows multiple methods in a single class.
+C++ ✅ → allows multiple methods in a single class.
+C ❌ → does not have classes at all (it’s procedural, not object-oriented).
+👉 Answer: C#, Java, C++
+
+2 - 2
+All C# applications begin execution by calling the _____ method.
+2 Marks
+sub main()
+x main()
+public()
+class()
+
+In C#, every application starts execution from the Main() method.
+
+👉 Correct answer: main() ✅
+
+(More precisely, it’s static void Main() or static int Main() depending on whether you return an exit code, but the quiz option is just main().)
+
+3 - 3
+CLR is equivalent of
+2 Marks
+x Java runtime environment
+Visual studio IDE
+.NET Library
+Python interpretor
+
+The CLR (Common Language Runtime) in .NET is the execution environment that manages running .NET programs — memory management, garbage collection, JIT compilation, etc.
+It is directly comparable to the Java Runtime Environment (JRE).
+👉 Correct answer: Java runtime environment ✅
+
+4 - 4
+The CLR is physically represented by an assembly named
+2 Marks
+x mscoree.dll
+mcoree.dll
+msoree.dll
+mscor.dll
+
+The CLR (Common Language Runtime) is physically represented by the assembly:
+👉 Correct answer: mscoree.dll ✅
+This DLL acts as the execution engine for .NET applications.
+
+5 - 5 A variable which is declared inside a method is called a________variable. 2 Marks 
+Local 
+Private 
+Static 
+Serial
+
+👉 Local variable ✅
+A variable declared inside a method lives only while that method is running, and it can’t be accessed outside the method.
+
+6 - 6
+Which methods are not supported for dynamic types.
+2 Marks
+x Anonymous
+Static
+Abstract
+Extension
+
+In C#, dynamic types are resolved at runtime. Some method types don’t make sense for dynamic:
+Anonymous methods ✅ (not supported with dynamic)
+Static methods ❌ (can be called, resolution happens at runtime)
+Abstract methods ❌ (these are about inheritance, not directly tied to dynamic)
+Extension methods ❌ (can still be used, but binding happens at runtime)
+👉 Correct answer: Anonymous ✅
+
+
+Why anonymous methods don’t work with dynamic
+An anonymous method (or a lambda) has no explicit name/type you can bind to at compile time.
+But dynamic defers binding until runtime — so the compiler has no way to guarantee the delegate signature when paired with dynamic.
+
+That’s why you can’t directly use anonymous methods on dynamic types
+
+7 - 7
+Which of the following is/are not types of arrays in C#?
+2 Marks
+1-D Array
+2-D Array
+Jagged Array
+x Jazzed Array
+
+8 - 8
+Two methods with the same name but with different parameters is called as?
+2 Marks
+x Overloading
+Multiplexing
+Duplexing
+Loading
+
+That’s a classic OOP concept ✅
+When two (or more) methods share the same name but have different parameters (number, type, or order), it’s called:
+👉 Overloading ✅
+
+9 - 9
+Different ways a method can be overloaded in C#.NET
+2 Marks
+Different parameter data types
+Different number of parameters
+Different order of parameters
+x All of above
+
+10 - 10
+A derived class may also be called as?
+2 Marks
+Super Class
+x Subclass
+Parent Class
+Base Class
+
+hat’s a fundamental OOP concept ✅
+Super Class / Parent Class / Base Class → all mean the original class being inherited from.
+Derived Class → the class that inherits from another class.
+👉 Correct answer: Subclass ✅
+
+11 - What is  the output for the given set of code?
+
+12 - 
+What is the correct output for given set of code?
+
+enum per
+{
+     a,
+     b,
+     c,
+     d,
+}
+per.a = 10;
+Console.writeline(per.b);
+2 Marks
+1
+11
+2
+x Compiler Error
+
+Issue with per.a = 10;
+In C#, enum members are constants.
+You cannot assign a value to them later.
+per.a = 10; → ❌ not allowed → causes a compiler error.
+✅ Correct Answer: Compiler Error
+⚡Note: If the code had been:
+enum per
+{
+    a = 10,
+    b,
+    c,
+    d,
+}
+Console.WriteLine(per.b);
+👉 Output would be 11, because b automatically gets the next integer after a = 10.
+
+13 - Choose the statement which should be added to the current set of code to get the output as 1 10 ?
+
+class baseclass
+{
+    protected int a = 10;
+}
+class derived : baseclass
+{
+    int a = 1;
+    public void math()
+    {
+         /* add code here */
+    }  
+}
+2 Marks
+Console.writeline( a +  " " + this.a);
+console.writeline(base.a +  " " + a);
+x console.writeline(a + " " + base.a);
+Console.Writeline( mybase.a +  " " + a);
+
+What’s happening:
+int a = 1; in derived hides the a = 10; from baseclass.
+When you write just a or this.a, it always refers to the derived class field (1).
+To explicitly access the base class field (10), you must use the base keyword → base.a.
+
+14 - What will be the output for the given set of code?
+
+class A
+{
+     public int i;
+     public void display()
+     {
+         Console.WriteLine(i);
+     }
+}    
+class B: A
+{
+     public int j;
+     public void display()
+     {
+         Console.WriteLine(j);
+     }
+}    
+class Program
+{
+     static void Main(string[] args)
+     {
+         B obj = new B();
+         obj.i = 1;
+         obj.j = 2;
+         obj.display();
+         Console.ReadLine();
+     }
+}
+2 Marks
+compiler runtime error
+x 2
+0
+1
+
+✅ Correct Answer: 2
+
+⚡ Note: If you had used ((A)obj).display();, then the parent class A’s method would run → output would be 1.
+
+
+15 - Select the sequence of execution of function f1(), f2() & f3() in C# .NET CODE?
+
+class base
+{
+     public void f1() {}
+     public virtual void f2() {}
+     public virtual  void f3() {}
+}
+class derived :base
+{
+     new public void f1() {}
+     public override void f2() {}
+     public new void f3() {}
+}
+class Program
+{
+     static void Main(string[] args)
+     {
+         baseclass b = new derived();
+         b.f1 ();
+         b.f2 ();
+         b.f3 ();
+     }
+}
+2 Marks
+f1() of derived class get executed f2() of derived class get executed f3() of base class get executed
+x f1() of base class get executed f2() of derived class get executed f3() of base class get executed
+f1() of base class get executed f2() of derived class get executed f3() of derived class get executed
+f1() of derived class get executed f2() of base class get executed f3() of base class get executed
+
+Step by step:
+
+b.f1();
+
+f1() in base is not virtual.
+
+Derived declares new f1(), which hides it, but since the reference is baseclass b, the base version runs.
+👉 f1() of baseclass executes.
+
+b.f2();
+
+f2() in base is virtual.
+
+Derived overrides it.
+
+With new derived() at runtime, dynamic dispatch calls the override.
+👉 f2() of derived class executes.
+
+b.f3();
+
+f3() in base is virtual.
+
+Derived declares new f3(), which hides the base method instead of overriding.
+
+Since the reference type is baseclass, base’s virtual method is chosen (because override didn’t happen).
+👉 f3() of baseclass executes.
+
+✅ Correct Answer:
+
+f1() of base class gets executed, f2() of derived class gets executed, f3() of base class gets executed
+
+
+
+
+

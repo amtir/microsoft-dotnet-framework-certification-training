@@ -1,0 +1,174 @@
+Date :  31-08-2025 
+
+.NET Introduction 
+
+QUIZ 
+
+1 - 1
+What is .Net
+2 Marks
+Programming Language
+Scripting Language
+x Framework
+None of the above
+
+2 - 2
+What are the operations performed by CLR
+2 Marks
+Memory Management
+Security Checks
+Thread Management
+x All of the above
+
+
+3 - 3
+In which forms assemblies are implemented
+2 Marks
+.exe
+.dll
+x Both
+None
+
+
+
+4 - Public assembly is also called as ?
+2 Marks
+Private Assembly
+Shared Assembly
+System Assembly
+Multiple Assembly
+
+Shared Assembly ✅
+
+A Public Assembly is one that has a strong name and can be shared among multiple applications. Hence, it’s called a Shared Assembly.
+
+👉 So the option Shared Assembly is correct.
+
+
+5 - 5
+Which code is directly executed by CLR
+2 Marks
+x Managed code
+Unmanaged code
+Compiled code
+Native code
+
+The correct answer is:
+
+Managed code ✅
+
+Managed code is the code that runs under the supervision of the CLR (Common Language Runtime).
+
+It benefits from CLR services like memory management, security, and exception handling.
+
+Unmanaged code (like C/C++ native code) runs outside CLR.
+
+👉 So the option Managed code is correct.
+
+6 - 6
+Which applications are developed by .Net Framework
+2 Marks
+Console Applications
+Windows Application
+Web Applications
+All of the above
+
+7- 7
+What is the extension of the project
+2 Marks
+x .cs project
+.sln
+.exe
+.dll
+
+.csproj ✅
+
+In .NET, a project file has the extension .csproj (for C# projects).
+
+.sln → Solution file (groups multiple projects).
+
+.exe / .dll → Output files generated after compilation, not project files.
+
+👉 So the correct extension of a project is .csproj.
+
+🔹 Difference between .sln and .csproj
+
+.sln (Solution File)
+
+Stands for Solution.
+
+It acts like a container that can hold one or more projects.
+
+Useful when you have multiple projects that need to work together (e.g., Web API + Class Library + Console Test App).
+
+Opened in Visual Studio to load the whole solution.
+
+.csproj (C# Project File)
+
+Stands for C# Project.
+
+Each individual project (e.g., Console app, Class library, Web app) has its own .csproj.
+
+Contains build configuration, references (NuGet packages, DLLs), target framework, etc.
+
+When compiled, it produces an output assembly → .exe (for executables) or .dll (for libraries).
+
+
+8 - 8
+A solution is  a collection of
+2 Marks
+classes
+x projects
+programs
+metadata
+
+Projects ✅
+
+A solution (.sln) in .NET is a collection of projects (.csproj, .vbproj, etc.).
+
+Each project may contain classes, forms, resources, and references.
+
+Multiple projects can be grouped into a single solution (e.g., a Web App + Class Library + Test Project).
+
+👉 So the option projects is correct.
+
+
+9 - 9
+Why Garbage Collector is used
+2 Marks
+x Frees the used memory
+Frees the empty memory
+Frees the unused code
+All of the above
+
+rees the used memory ✅
+
+The Garbage Collector (GC) in .NET is responsible for:
+
+Automatically freeing memory occupied by objects that are no longer used/referenced.
+
+Preventing memory leaks by reclaiming space and making it available for new objects.
+
+🔹 It does not free "empty memory" (that’s already free) and it does not remove code.
+
+10 - Which is used to download the required libraries
+2 Marks
+x NuGet packet Manager
+Solution explorer
+IDE
+Visual Studio
+
+
+NuGet Package Manager ✅
+
+NuGet Package Manager is the tool in .NET used to download, install, update, and manage external libraries and dependencies.
+
+Solution Explorer → used to view/manage files and projects in a solution.
+
+IDE (Integrated Development Environment) → the environment itself (like Visual Studio).
+
+Visual Studio → the IDE, but the actual library management is done via NuGet inside it.
+
+
+
+
