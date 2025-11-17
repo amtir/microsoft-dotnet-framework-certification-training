@@ -1,0 +1,50 @@
+## Ignore Visual Studio cache, temp, and build files
+.vs/
+*.user
+*.suo
+*.cache
+*.tmp
+
+## Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+## NuGet packages
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+## Auto-generated files
+*.log
+*.dbmdl
+*.jfm
+*.pdb
+
+## Publish profile
+Properties/PublishProfiles/
+
+## SQL Server files
+*.mdf
+*.ldf
+
+## Resharper / Rider / Code Analysis
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+## Other miscellaneous
+*.exe
+*.dll
+*.class
+*.vspscc
+*.vssscc
+*.orig
+
+## OS generated files
+Thumbs.db
+.DS_Store
