@@ -1,0 +1,237 @@
+
+Date: 22-09-2025
+
+ADO.NET  Daa Access from SQL 
+
+
+QUIZ
+
+1 - 1
+In a connection string _____________ represents name of the database
+2 Marks
+Data Source
+x Initial Catalog
+catalog initial
+Database
+
+In an ADO.NET SQL Server connection string:
+👉 Initial Catalog (or synonym Database) specifies the name of the database.
+Example:
+Data Source=LAPTOP-85MTF1DV;Initial Catalog=EmployeeDB;Integrated Security=True;
+Data Source → the server / instance
+Initial Catalog=EmployeeDB → the database name
+
+2  - 2
+ADO .NET is a?
+2 Marks
+Framework
+Class
+Namespace
+x API
+
+👉 ADO.NET is a Namespace in the .NET Framework (System.Data, System.Data.SqlClient, etc.) that provides classes for data access.
+
+✅ Correct answer: Namespace
+
+
+3 - 3
+What are the Command Object Methods?
+2 Marks
+ExecuteNonQuery
+ExecuteReader
+ExecuteScalar
+x All of the above.
+
+👉 The Command object in ADO.NET supports several execution methods:
+ExecuteNonQuery() → for INSERT, UPDATE, DELETE (returns affected rows)
+ExecuteReader() → for SELECT (returns a DataReader)
+ExecuteScalar() → for single values (first column of first row)
+✅ Correct answer: All of the above
+
+4 - 4
+When you create a relationship between tables in ADO.NET DataSet
+2 Marks
+A UniqueConstraint is added to the parent table
+A ForeignKeyConstraint is added to the child table by default
+Both a and b
+None
+
+When you create a relationship (DataRelation) between tables in an ADO.NET DataSet:
+A UniqueConstraint is added automatically to the parent table.
+A ForeignKeyConstraint is added automatically to the child table.
+👉 So both are true.
+✅ Correct answer: Both a and b
+
+5 -5
+Which of the following is not a DataReader method?
+2 Marks
+NextResult
+GetName
+GetValue
+GetDataType
+
+Let’s check the DataReader methods in ADO.NET:
+✅ NextResult() → moves to the next result set.
+✅ GetName(int i) → gets column name.
+✅ GetValue(int i) → gets value of column.
+❌ GetDataType → does not exist (the actual method is GetDataTypeName(int i) or GetFieldType(int i)).
+👉 Therefore:
+✅ Correct answer: GetDataType
+
+6 -  6
+Which database is the ADO.NET SqlConnection object designed for?
+2 Marks
+x MSSQL Server
+Oracle Db
+MySQL
+Hadoop Database
+
+👉 The SqlConnection object in ADO.NET is specifically designed for Microsoft SQL Server (MSSQL Server).
+✅ Correct answer: MSSQL Server
+
+
+
+7 - 7
+Which is not an ADO.NET DataAdapter Object?
+2 Marks
+OleDbDataAdapter
+SQLDataAdapter
+x QueryDataAdapter
+All of the above.
+
+In ADO.NET, valid DataAdapter objects include:
+OleDbDataAdapter → for OLE DB data sources
+SqlDataAdapter → for SQL Server
+OdbcDataAdapter → for ODBC
+👉 There is no such thing as SQLDataAdapter (it should be SqlDataAdapter, note the casing) and definitely no QueryDataAdapter.
+So the one that is not an ADO.NET DataAdapter object is:
+✅ Correct answer: QueryDataAdapter
+
+8 - 8
+Which of the following illustrates the benefit of ADO.NET?
+2 Marks
+Interoperability
+It uses DataSet to represent data in memory that can store data from multiple tables and multiple sources.
+Disconnected data access
+x All of the above.
+
+ADO.NET provides:
+Interoperability (works with different databases / providers)
+DataSet (can hold multiple tables from multiple sources in memory)
+Disconnected data access (work offline with DataSet, reconnect later)
+👉 All are correct.
+✅ Correct answer: All of the above
+
+
+9 - 9
+Which object does the data-aware control bind to?
+2 Marks
+x Dataset
+DataAdapter
+DataReader
+Allof the above
+
+In ADO.NET, data-aware controls (like DataGridView, ComboBox, etc.) bind to objects that implement IList, IListSource, or IBindingList.
+
+✅ DataSet (or more specifically DataTable / DataView inside it) can be bound.
+❌ DataAdapter is only for filling a DataSet; it’s not directly bindable.
+❌ DataReader is forward-only, read-only; not suitable for direct binding.
+👉 So the correct one is:
+✅ Correct answer: Dataset
+
+
+10 - 10
+Which of the following method of the command object is best suited when you have aggregate functions in a SELECT statement?
+2 Marks
+x ExecuteScalar
+ExecuteReader
+x ExecuteNonQuery
+None
+
+When your SELECT query has aggregate functions (like COUNT, SUM, AVG, MAX, MIN), you only need a single value back.
+👉 That’s exactly what ExecuteScalar() is for — it returns the first column of the first row from the result set.
+✅ Correct answer: ExecuteScalar
+
+
+
+11 - To perform Insert, Update and Delete Command which method is used?
+2 Marks
+ExecuteReader
+x ExecuteNonQuery
+ExecuteScalar
+None
+
+That’s a classic 💡
+ExecuteReader() → returns rows (for SELECT)
+ExecuteScalar() → returns a single value (like COUNT, SUM)
+ExecuteNonQuery() → used for INSERT, UPDATE, DELETE (returns number of rows affected)
+✅ Correct answer: ExecuteNonQuery
+
+
+12 - 12
+Which DataAdapter Query Type can be used with the Access database?
+2 Marks
+x Use SQL statements.
+Create a new stored procedure.
+Use existing stored procedure.
+All of the above.
+
+With Microsoft Access (via OleDbDataAdapter):
+
+✅ You can use SQL statements (e.g., SELECT * FROM Employees).
+❌ You cannot create stored procedures in Access.
+❌ You cannot use existing stored procedures (Access doesn’t support them).
+👉 So only plain SQL works.
+✅ Correct answer: Use SQL statements.
+
+
+
+
+13 - 13
+The default timeout for SqlCommand.Command timeout property
+2 Marks
+10 Seconds
+x 30 Seconds
+60Seconds
+40  Seconds
+
+👉 The default value of SqlCommand.CommandTimeout is 30 seconds.
+(After that, the command aborts if no response.)
+✅ Correct answer: 30 Seconds
+
+
+
+14 - 14
+How do you execute multiple SQL statements using a DataReader?
+2 Marks
+Call the ExecuteReadermethod of two Command objects and assign the results tothe same instance of a DataReader.
+Call the ExecuteReadermethod of a single Command object twice.
+x Set the Command.CommandTextproperty to multiple SQL statements delimited by a semicolon.
+Set the Command.CommandTypeproperty to multiple result sets.
+
+In ADO.NET, you can send multiple SQL statements in a single CommandText, separated by semicolons, and then process them with a DataReader using .NextResult().
+👉 So the correct choice is:
+✅ Set the Command.CommandText property to multiple SQL statements delimited by a semicolon.
+
+
+15 - What property contains the actual error message returned by SQL Server?
+2 Marks
+SqlError.Message
+SqlException.Message
+x Both a and b
+none
+
+SqlError.Message → each individual error returned from SQL Server has a Message property.
+SqlException.Message → the exception object itself also exposes a Message (usually from the first SqlError).
+👉 So both can contain the error text.
+✅ Correct answer: Both a and b
+
+
+
+
+
+
+
+
+
+
