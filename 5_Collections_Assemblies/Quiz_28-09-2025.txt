@@ -1,0 +1,134 @@
+Date: 28-09-2025
+
+QUIZ 
+
+
+1 - 1
+What is collection?
+2 Marks
+A biult in data structure
+Stores huge amount of data
+store data temporarily
+x All of these
+
+All of these ✅
+👉 In C#, a collection is a built-in data structure that can store large amounts of data and temporarily hold objects in memory for processing.
+
+
+2 - 2
+Which is a root collection in .NET
+2 Marks
+x IEnumerable
+ICollection
+Iroot
+IDictionary
+
+IEnumerable ✅
+👉 In .NET, IEnumerable is the root collection interface. All other collection interfaces (like ICollection, IList, IDictionary, etc.) inherit from it, because it provides the basic functionality to iterate over a collection.
+
+3 - 3
+Which are prioritised collections?
+2 Marks
+array & Arraylist
+x Stack & Queue
+Hashtable
+Sortedlist
+
+Stack & Queue ✅
+👉 They are called prioritized collections because they store and retrieve elements based on order rules:
+Stack → LIFO (Last In, First Out)
+Queue → FIFO (First In, First Out)
+
+
+4 - 4
+Advantage of Arraylist
+2 Marks
+stores only one type of elements
+Size is fixed
+x stores different type of elements
+None of these
+
+stores different type of elements ✅
+👉 ArrayList in C# can hold elements of different data types since it stores them as object.
+Not restricted to a single type
+Size is dynamic (not fixed like arrays)
+
+5 - 5
+What is the use of Generics?
+2 Marks
+Helps to store & handle any type of data
+Handle huge data
+x Helps to store and handle one type of data
+Helps to declare objects
+
+Helps to store and handle one type of data ✅
+👉 Generics in C# allow you to create classes, methods, and collections that are type-safe and work with a specific data type without boxing/unboxing, improving performance and reducing errors.
+
+
+6 - 6
+What is an Assembly
+2 Marks
+Smallest unit of deployment in .NET
+contains both .exe and .dll files
+Logical Unit of .Net compilation
+x ll  of these
+
+The correct answer is:
+All of these ✅
+👉 An Assembly in .NET is:
+The smallest unit of deployment (can be versioned and deployed independently).
+Can be an .exe (application) or .dll (library).
+Considered the logical unit of .NET compilation (contains IL code + metadata).
+
+7 - When .exe file is generated?
+2 Marks
+For a class which contains main method
+x For a class which has no main
+when a class is compiled
+For class, which contains public methods
+
+For a class which contains main method ✅
+👉 In C#, an .exe file is generated only when the program has an entry point, i.e., a Main() method. Otherwise, compilation produces a .dll file (library).
+
+8 - 8
+How many number of assemblies exists?
+2 Marks
+1
+x 2
+3
+4
+
+2 ✅
+👉 In .NET, there are two types of assemblies:
+Private Assembly – Used only by a single application.
+Shared (Public) Assembly – Stored in the Global Assembly Cache (GAC) and can be used by multiple applications.
+
+
+9 - 9
+Public assembly Is also called as?
+2 Marks
+Private assembly
+assembly
+x shared  assembly
+None of these
+
+shared assembly ✅
+👉 A public assembly is also known as a shared assembly, because it is stored in the Global Assembly Cache (GAC) and can be shared among multiple applications.
+
+
+
+10 - 10
+What is GAC?
+2 Marks
+Global Assembly Cache
+Repository for all assemblies
+contains libraries, accessible for other applications
+x All of these
+
+All of these ✅
+👉 GAC (Global Assembly Cache) is:
+A global repository for assemblies.
+Stores shared assemblies (public assemblies).
+Contains libraries that are accessible by multiple applications.
+
+
