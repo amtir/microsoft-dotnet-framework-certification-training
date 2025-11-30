@@ -1,0 +1,281 @@
+
+
+QUIZ 
+
+Date: 29-11-2025
+
+1 - 1
+What is the purpose of WSDL in a web service?
+2 Marks
+A web services takes the help of WSDL to tag the data, format the data.
+A web service takes the help of WSDL to transfer a message.
+x A web service takes the help of WSDL to describe the availability of service.
+None of the above
+
+A web service takes the help of WSDL to describe the availability of service.
+Explanation:
+WSDL (Web Services Description Language) describes:
+What the service does
+What methods (operations) are available
+What parameters and return types exist
+How to call the service
+The service endpoint (URL)
+So the correct option is:
+
+👉 A web service takes the help of WSDL to describe the availability of service.
+
+
+2 - 2
+Which of the following is true about behavioral characteristics of web services?
+2 Marks
+Asynchronous clients retrieve their result at a later point in time, while synchronous clients receive their result when the service has completed
+A web service supports RPC by providing services of its own, equivalent to those of a traditional component, or by translating incoming invocations into an invocation of an EJB or a .NET component.
+Web services support the transparent exchange of documents to facilitate business integration
+x All of the above
+
+All of the above
+Explanation:
+All three statements describe valid behavioral characteristics of web services:
+1️⃣ Asynchronous vs synchronous behavior
+✔ True — web services can handle both synchronous and asynchronous client calls.
+2️⃣ Support for RPC-style communication
+✔ True — SOAP-based web services can behave like RPC (Remote Procedure Call) by invoking components on the server side.
+3️⃣ Support for document-style messaging
+✔ True — web services can exchange XML documents to enable business-level integration.
+Since all statements are correct:
+👉 Correct option: All of the above
+
+3 - 3
+Which component of Web Services does not acts as a directory?
+2 Marks
+XML
+SOAP
+WSDL
+UDDI
+
+The only Web Services component that acts as a directory is UDDI.
+So the components that do NOT act as a directory are:
+XML → data format
+SOAP → messaging protocol
+WSDL → service description language
+Since the question asks for one answer, the intended correct option is:
+✅ SOAP
+(They commonly frame SOAP as the contrasting option because XML and WSDL are also not directories, but SOAP is the one most clearly “not a directory service.”)
+
+4 - 
+Web services communicate using __________.
+2 Marks
+x Open Protocols
+Close Protocols
+Open Close Protocol
+none of the above
+
+Open Protocols
+Explanation:
+Web services use standard, platform-independent, open protocols such as:
+HTTP
+XML
+SOAP
+WSDL
+These are not proprietary or closed, so:
+👉 Open Protocols is the correct choice.
+
+
+5 - Which of the following is a security issue with web services?
+2 Marks
+Confidentiality
+Authentication
+Network Security
+x all of the above
+
+all of the above
+Explanation:
+Web services face several security issues, including:
+Confidentiality → ensuring data is not exposed
+Authentication → verifying the identity of users/services
+Network Security → protecting communication channels from attacks
+Since all apply:
+👉 all of the above
+
+
+6 - 6
+Service Description is responsible for describing the public interface to a specific web service.
+2 Marks
+x TRUE
+FALSE 
+
+TRUE
+Explanation:
+Service Description (WSDL) defines the public interface of a web service, including:
+Available methods
+Input and output parameters
+Data types
+Service endpoint
+So the statement is true.
+
+
+7 - 7
+Which of the following is an object that provides local representation of a remote web service?
+2 Marks
+ServerBindings metabase
+FTP service
+Web Forms
+x Web Service Proxy
+
+Web Service Proxy
+Explanation:
+A web service proxy is a class generated on the client side that represents the remote web service locally.
+You call its methods as if it's a local object, and it sends SOAP requests to the actual service.
+So the correct option is:
+👉 Web Service Proxy
+
+
+8 - 8
+A Web Service reference need to be added in client application before using that.
+2 Marks
+x TRUE
+FALSE
+
+TRUE
+Explanation:
+Before a client application can call a web service, it must:
+Add a Web Service Reference (in .NET this generates the proxy class)
+This proxy allows the client to call web service methods as if they were local
+So the statement is true.
+
+
+9 - 9
+Service Description is responsible for describing the public interface to a specific web service.
+2 Marks
+Web form
+x Web  Service Client
+Windows Form
+all of the above
+
+Web Service Client
+Explanation
+WSDL describes the public interface of the service (methods, inputs, outputs, URL).
+The client reads the WSDL and uses it to generate the proxy.
+Web Forms and Windows Forms don’t describe the interface—they may use the client, but they are not responsible for understanding WSDL.
+👉 Therefore, the right answer is Web Service Client.
+
+
+
+10 - How many types of authentication ASP.NET supports?
+2 Marks
+Windows Authentication.
+Passport Authentication.
+Forms Authentication.
+x all of the above
+
+all of the above
+Explanation:
+ASP.NET supports several authentication types, including:
+Windows Authentication
+Passport Authentication (older Microsoft service)
+Forms Authentication
+Therefore:
+👉 all of the above
+
+
+11 - Choose Web.config file is used for?
+2 Marks
+Configures the time that the server-side codebehind module is called
+x To store the global information and variable definitions for the application
+To configure the web server
+To configure the web browser
+
+To store the global information and variable definitions for the application
+Explanation:
+The web.config file is used to configure:
+Authentication
+Authorization
+Session state
+Connection strings
+Error pages
+Application-level settings
+It does NOT configure the browser or decide when code-behind runs.
+So the correct choice is:
+👉 To store the global information and variable definitions for the application
+
+
+12 - 12
+What class does the ASP.NET Web Form class inherit from by default?
+2 Marks
+x System.Web.UI.Page
+System.Web.UI.Form
+System.Web.GUI.Page
+System.Web.Form
+
+The correct answer is:
+✅ System.Web.UI.Page
+Explanation:
+Every ASP.NET Web Form (.aspx page) automatically inherits from the Page class located in the System.Web.UI namespace.
+
+Example behind the scenes:
+public partial class MyPage : System.Web.UI.Page
+{
+}
+So the correct choice is:
+👉 System.Web.UI.Page
+
+
+13 - Element in the web.config file to run code using the permissions of a specific user is?
+2 Marks
+< credential> element
+< authentication> element
+< authorization> element
+x < identity> element
+
+The correct answer is:
+
+✅ <identity> element
+Explanation:
+The <identity> element in web.config is used for impersonation, which allows ASP.NET to run code using the permissions of a specific user.
+Example:
+<identity impersonate="true" userName="domain\user" password="password" />
+This executes the application using that user’s permissions.
+So the correct option is:
+👉 <identity> element
+
+
+14 - 14
+Where do we include the user lists for windows authentication?
+2 Marks
+< Credential>
+x < authorization>
+< identity>
+< authentiation>
+
+The correct answer is:
+✅ <authorization>
+Explanation:
+In Windows Authentication, you control which Windows users or groups are allowed or denied by configuring the:
+<authorization>
+section in web.config.
+Example:
+<authorization>
+    <allow users="DOMAIN\User1" />
+    <deny users="*" />
+</authorization>
+
+<authorization> → used to include or exclude user lists
+<credential> → used in Forms Authentication, not Windows
+<identity> → used for impersonation
+<authentication> → only selects authentication mode, not user lists
+So the correct answer is:
+👉 <authorization>
+
+
+15 - 
+
+
+
+
+
+
+
+
+
+
+
