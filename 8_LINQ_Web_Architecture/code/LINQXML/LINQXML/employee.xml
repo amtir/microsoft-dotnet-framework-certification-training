@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+	<employee>
+		<empid>101</empid>
+		<ename>Akshay</ename>
+		<salary>10000</salary>
+		<gender>Male</gender>
+	</employee>
+
+	<employee>
+		<empid>102</empid>
+		<ename>Vinay</ename>
+		<salary>25000</salary>
+		<gender>Male</gender>
+	</employee>
+
+	<employee>
+		<empid>103</empid>
+		<ename>Stella</ename>
+		<salary>15000</salary>
+		<gender>Female</gender>
+	</employee>
+
+	<employee>
+		<empid>104</empid>
+		<ename>Amaya</ename>
+		<salary>50000</salary>
+		<gender>Female</gender>
+	</employee>
+</Employees>

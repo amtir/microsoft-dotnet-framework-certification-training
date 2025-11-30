@@ -1,0 +1,338 @@
+
+
+QUIZ 
+
+1 - 
+1
+What is the full form of LINQ
+2 Marks
+x Language integrated query
+Linked interface query
+Language identifier query
+none of the above
+
+2 - Assume 2 columns named as Product and Category how can be both sorted out based on first by category and then by product name?
+2 Marks
+var sortedProds = _db.Products.Orderby(c => c.Category)
+x var sortedProds = _db.Products.Orderby(c => c.Category) + ThenBy(n => n.Name)
+var sortedProds = _db.Products.Orderby(c => c.Name) . ThenBy(n => n.Category)
+all of the above
+
+
+
+3 - 3
+Choose the namespace in which the interface IEnumerable is declared?
+2 Marks
+System.Collections
+System.Collections.Generic
+x Both a & b
+none of the above
+
+Both a & b
+Explanation:
+IEnumerable exists in two namespaces:
+System.Collections → IEnumerable (non-generic)
+System.Collections.Generic → IEnumerable<T> (generic)
+Therefore:
+Correct: Both a & b
+
+
+4 - What will be the output of the given code snippet?
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] strs = {"alpha", "beta", "gamma"};
+        var chrs = from str in strs
+                   let chrArray = str.ToCharArray()
+                   from ch in chrArray
+                   orderby ch
+                   select ch;
+        Console.WriteLine("The individual characters in sorted order:");
+        foreach (char c in chrs)
+        Console.Write(c + " ");
+        Console.WriteLine();
+        Console.ReadLine();
+    }
+
+What will be the output of the given code snippet?
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] strs = {"alpha", "beta", "gamma"};
+        var chrs = from str in strs
+                   let chrArray = str.ToCharArray()
+                   from ch in chrArray
+                   orderby ch
+                   select ch;
+        Console.WriteLine("The individual characters in sorted order:");
+        foreach (char c in chrs)
+        Console.Write(c + " ");
+        Console.WriteLine();
+        Console.ReadLine();
+    }
+}
+2 Marks
+a a l h a b g m m a p e t a
+x    a a a a a b e g h l m m p t
+a g h l m m p t a a a a b e
+runtime error
+
+Let's list ALL characters from the strings:
+
+Strings:
+
+alpha → a, l, p, h, a
+
+beta → b, e, t, a
+
+gamma → g, a, m, m, a
+
+Combine them:
+a l p h a b e t a g a m m a
+
+Sort alphabetically:
+a a a a a b e g h l m m p t
+
+Correct Answer:
+a a a a a b e g h l m m p t
+
+
+5 - 5
+What will be the output of the given code snippet?
+class Program
+{
+     static void Main(string[] args)
+     {
+         int[] nums = { 1, -2, 3, 0, -4, 5 };
+         var posNums = nums.Where(n => n > 0).Select(r => r*2).OrderByDescending(r=>r);
+         Console.Write("The positive values in nums: ");
+         foreach(int i in posNums)
+         Console.Write(i + " ");
+         Console.WriteLine();
+         Console.ReadLine();
+     }
+}
+2 Marks
+code run successfully prints nothing
+run time error
+x code run successfully prints multiple of 2
+compile time error
+Output:
+The positive values in nums: 10 6 2
+The code is valid, runs successfully, and prints multiples of 2 of the positive numbers.
+Correct Answer:
+code run successfully prints multiple of 2
+
+
+6 - 6
+What will be the output of the given code snippet?
+class Program
+{
+     static void Main(string[] args)
+     {
+         int[] nums = {3, 1, 2, 5, 4};
+         var ltAvg = from n in nums
+                     let x = nums.Average()
+                     where n < x
+                     select n;
+         Console.WriteLine("The average is " + nums.Average());
+         Console.ReadLine();
+     }
+}
+2 Marks
+Run time error
+x 3
+5
+Compile time error
+
+Compute the average:
+(3 + 1 + 2 + 5 + 4) = 15
+15 / 5 = 3
+The program does not print ltAvg
+It only prints:
+The average is 3
+There is no runtime error and no compile error.
+Correct Answer: 3
+
+
+7 - What will be the output of the given code snippet?
+class Program
+{
+    static void Main(string[] args)
+    {
+        Expression<Func<int, int, bool>>
+        IsFactorExp = (n, d) => (d != 0) ? (n % d) == 0 : false;
+        Func<int, int, bool> IsFactor = IsFactorExp.Compile();
+        if (IsFactor(10, 5))
+        Console.WriteLine("5 is a factor of 10.");
+        if (!IsFactor(343, 7))
+        Console.WriteLine("7 is not a factor of 10.");
+        Console.ReadLine();
+    }
+}
+2 Marks
+Compile time error
+Run time error
+5 is a factor of 10
+7 is not a factor of 10
+x 5 is a factor of 10
+
+
+
+8 - 8
+For the given set of codes, which query will work according to the set of code?
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] nums = { 1, -2, 3, 0, -4, 5 };
+        int len = /*_________________ */
+        Console.WriteLine("The number of positive values in nums: " + len);
+        Console.ReadLine();
+    }
+}
+2 Marks
+from n in nums where n > 0
+select n
+from n in nums where n > 0
+select n.Count()
+(from n in nums where n > 0
+x select n).Count();
+Both b & c
+
+
+9 - 9
+For the given set of code, what does the output represent?
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] nums = { 1, -2, 3, 0, -4, 5 };
+        var posNums = from n in nums
+                      where n > 0
+                      select n;
+        int len = posNums.Count();
+        Console.WriteLine(len);
+        Console.ReadLine();
+    }
+}
+2 Marks
+Execution of code with nothing being printed
+Execution of code with printing all numbers
+x Execution of code with counting total numbers greater than zero
+Run time error
+
+
+
+
+10 - 
+Installation Guide
+Introduction to .NET
+Introduction to C# and Oops using C#.NET
+Windows Forms using C#.NET
+ADO.NET- Data Access from SQL
+Collections and Assemblies
+ASP.NET
+Web Server Controls
+LINQ, Web Architecture
+Part 1: LINQPart 2: MVC and Entity FrameworkPart 3: 3-tier ArchitecturePresentationQuiz VIIIAssignmentDemo
+State Management, Ajax
+Security and Web services
+Certification Project
+10
+Three-tier architecture includes which of the following?
+2 Marks
+Three server layers
+A client layer and two server layers
+Two client layers and one server layer
+Three client layers
+
+
+
+11 - 11
+3-tier architectures cannot be properly tested because network load is highly variable.
+2 Marks
+TRUE
+x FALSE
+
+Explanation
+3-tier architectures can be properly tested, including:
+Unit testing
+Integration testing
+Load testing
+Stress testing
+End-to-end testing
+Network load variability does not prevent proper testing — it simply requires using tools like:
+JMeter
+LoadRunner
+k6
+Visual Studio Load Tests
+So the statement is incorrect.
+
+
+12 - Which of the following are the benefits of using 3-tier architecture?
+2 Marks
+New modules can be built to support specific business needs
+Performance improves for compiled SQL statements
+Results in a thinner client and database server
+x All of the above
+
+All of the above
+Explanation
+3-tier architecture offers several benefits:
+New modules can be built easily
+Because business logic is separated, new features can be added without affecting UI or database layers.
+Performance improves for compiled SQL
+The Data Access Layer can optimize queries, caching, connection pooling, etc.
+Thinner client and database server
+The Business Logic Layer (“middle tier”) does the heavy work, reducing load on UI and DB.
+
+
+13 - 13
+Client/server architecture includes which of the following securities?
+2 Marks
+Physical security
+Change control security
+Measures taken to secure all systems
+All of the above
+
+All of the above
+Explanation
+Client/server architecture must consider multiple layers of security:
+Physical security
+Protect hardware, servers, network equipment.
+Change control security
+Ensure software updates, patches, and configuration changes are controlled.
+System-wide security measures
+Firewall, authentication, encryption, antivirus, network policies, etc.
+
+
+14 - Database server is responsible for?
+2 Marks
+x Database storage
+Data processing logic
+Data presentation logic
+All of the above
+
+
+15 - 15
+Applications / assemblies talk with each other by using which of the data formats?
+2 Marks
+SQL queries
+CSV files
+XML files
+x All of the above
+
+Applications and assemblies can communicate using many kinds of data formats, including:
+SQL queries (database-level communication)
+CSV files (simple data exchange)
+XML files (structured data communication, configuration, web services)
+All are valid forms of interoperability depending on the system design.
+
+
+
+
+
+

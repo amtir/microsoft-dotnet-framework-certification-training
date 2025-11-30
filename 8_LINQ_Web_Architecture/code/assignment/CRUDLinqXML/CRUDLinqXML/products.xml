@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Products>
+  <Product id="01">
+    <name>Prouct_a</name>
+    <price currency="INR">1200</price>
+  </Product>
+  <Product id="02">
+    <name>Product2_New</name>
+    <price currency="INR">1800</price>
+  </Product>
+  <Product id="03">
+    <name>Product3</name>
+    <price currency="INR">2000</price>
+  </Product>
+  <Product id="06">
+    <name>Product6</name>
+    <price currency="INR">4000</price>
+  </Product>
+</Products>
