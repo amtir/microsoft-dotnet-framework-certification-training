@@ -1,0 +1,237 @@
+
+State Management, Ajax 
+
+QUIZ 
+
+
+1
+What are different types of state management techniques
+2 Marks
+Client-side
+server-side
+x Both A & B
+None of the above
+
+
+Both A & B
+
+Explanation:
+State management in ASP.NET has two categories:
+
+Client-side techniques
+ViewState
+Hidden Fields
+Cookies
+Query Strings
+Control State
+
+Server-side techniques
+Session
+Application
+Cache
+Profile
+
+Therefore, state management includes both client-side and server-side approaches.
+
+2
+What are client side state management techniques?
+2 Marks
+Viewstate
+Querystring
+Cookie
+x All of the above
+
+
+3
+What are different types of cookies?
+2 Marks
+persistent cookies
+Impersistent cookies
+Non-persistent cookies
+Both A & C
+
+Both A & C
+Explanation:
+There are two main types of cookies:
+
+Persistent Cookies
+Stored on the client’s machine
+Have an expiration date
+
+Non-persistent Cookies (Session Cookies)
+Exist only during the browser session
+Deleted when the browser is closed
+So Persistent Cookies (A) and Non-persistent Cookies (C) are the correct types.
+
+✔ “Impersistent cookies” is not a valid term.
+
+
+
+4
+What are server side state management techniques?
+2 Marks
+Application
+Cache
+Querystring
+Pagelevel cache
+
+
+Explanation:
+Server-side state management techniques include:
+Session State
+Application State
+Cache
+Profile
+
+Why the others are wrong:
+QueryString → Client-side
+Page-level cache → This is part of output caching, but the option given does not match a standard server-side technique name.
+
+So the correct choice from the options is:
+Application  & Cache
+
+
+
+5 Which ASP.NET object encapsulates the state of client and browser
+2 Marks
+application object
+session object
+response object
+x request object
+
+Request object
+
+Explanation:
+The Request object in ASP.NET encapsulates:
+Information about the client (browser type, capabilities, IP address)
+Data sent by the browser (headers, cookies, query string, form values)
+Therefore, it represents the state of the client and the browser.
+
+Why others are incorrect:
+Application object → stores global data for all users
+Session object → stores data per individual user
+Response object → sends data back to the browser
+
+✔ Correct: Request object
+
+
+
+6
+What are different types of cache?
+2 Marks
+Output cache
+Data Cache
+Fragment cache
+x All of the above
+
+
+All of the above
+
+Explanation:
+ASP.NET supports three main types of caching:
+Output Cache: Caches entire page output.
+Data Cache (Application Cache): Stores data objects (e.g., datasets, objects) in memory.
+Fragment Cache: Caches parts of a page (user controls or specific sections).
+
+✔ Therefore, all options are correct.
+
+
+
+7
+Where is cookie stored?
+2 Marks
+x Client machine
+Server side
+Both A & B
+None
+
+
+Client machine
+
+Explanation:
+A cookie is always stored on the client-side, typically inside the browser.
+The server only sends cookies, but does not store them.
+
+So the correct choice is:
+
+✔ Client machine
+
+
+
+
+8
+Which of the following is not the way to maintain state
+2 Marks
+viewstate
+Cookies
+Hidden field
+x Request object
+
+Request object
+
+Explanation:
+
+The following ARE state-management techniques (client-side):
+ViewState
+Cookies
+Hidden Field
+But the Request object: Does not store state
+
+Simply represents the current HTTP request sent by the browser
+Contains query strings, form data, headers, etc.
+Is not used to preserve data across postbacks
+
+✔ Therefore, Request object is NOT a way to maintain state.
+
+
+9
+Point out Ajax Extensions
+2 Marks
+Script Manager
+Update Panel
+Both A & B
+Ajax label
+
+Both A & B
+
+Explanation:
+AJAX Extensions in ASP.NET include:
+ScriptManager
+Manages AJAX scripts and is required for using AJAX controls.
+UpdatePanel
+Enables partial postback (updates part of the page without refreshing the whole page).
+"Ajax label" is not an actual AJAX extension control.
+
+✔ So the right choice is Both A & B
+
+
+
+10
+Use of Ajax
+2 Marks
+Single browser compatabilty
+x Reduce full-page refreshes
+Allows page flicker
+All of the above
+
+Reduce full-page refreshes
+
+Explanation:
+AJAX is mainly used to:
+Reduce full-page postbacks
+Update portions of a page asynchronously
+Make web applications faster and more responsive
+
+Why the other options are incorrect:
+Single browser compatibility: AJAX works across all major browsers, not just one.
+Allows page flicker: AJAX prevents flicker by avoiding full-page reloads.
+
+So the correct choice is: Reduce full-page refreshes
+
+
+
+
+
+
+
+

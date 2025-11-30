@@ -1,0 +1,543 @@
+
+
+Topic
+Agenda 
+
+Part1: 
+
+Why and What is State Management 
+
+Client side: State Management Techniques
+Server side: Side Management Technique
+
+Objective : Available Client side and server-side techniques 
+
+
+Why ? Information would be lost with each round - trip. To preserves data as pr page basis and application wide basis 
+All we application require high level of state management from control to application level 
+Refers to preserving state of a control or a at tool in web pages application explicitly 
+
+State means an interaction between the user and the server
+HTTP Protocol acts like a bridge between them but is a stateless protocol
+With each request the object are created and memory is being allocated  
+These resources are destroy ed once the server completes its process
+
+
+
+Client & server side state Management technique 
+
+Client Side : 
+ViewState: used to maintain the state in the same page 
+Query String : Used to carry data from existing page to next page 
+Cookie: Used to maintain the user authenticated details in the client machine itself
+ Cache : Used to store the data in cache (in memory) Responsible for reply with the previous result till the new result is generated.
+
+
+Server side state management techniques 
+Application :   Used to maintain the state from application start to application stop 
+Session :  Used to maintain the state from session login to session logout 
+
+
+
+Part2: 
+Topics: State Management Techniques, Viewstate, Querystring, Pro and cons of Querystring, Cookies, Types of Cookies, Http cookies class 
+
+State Management Techniques :  
+ViewState : Used to maintain the state the state in the same webpage (current web form) 
+Preserve page and controls property values between round trips. When the page is processed, the current state of the page and controls are stored into a string. 
+Then saved in teh page as a hidden field 
+
+To achieve this, there is two ways: 
+1. Set the properties of controls EnableViewState: true
+2. ViewStateMode = "Enabled" in <%@Page attribute%> in every webapge
+
+Features: Viewstate 
+View stat is a repository in an ASP.NET page
+The page framework uses view state to persist control settings between postbacks
+Keep values between postbacks without storing them in session state or in a user profile
+Store the values of page or control properties that you define 
+
+Advantages & Disadvantages – Viewstate
+Advantages:
+i) No server resources.
+ii) Viewstate ensures security because it stores the data in encrypted format.
+iii) Viewstates are simple. They are used by enabling or disabling the viewstate properties.
+iv) It is based on the wish of developer that they want to implement it at the page level or at control level.
+
+Disadvantages:
+i) If large amount of data is stored on the page, then page load might cause a problem.
+ii) Does not track across pages.
+
+
+Query String 
+
+What is a QueryString?
+A technique used to carry data from one webpage to another
+HTML addresses use QueryString property to pass values between pages
+A collection of key value pairs separated by two symbols
+Two symbols are & and ? are of datatype string
+It is ideal for data transfer from one page to another using hyperlink or URL
+
+
+Advantages and Disadvantages – QueryString
+Advantages:
+Supported by all browsers
+Easy syntax
+No need to decode
+Disadvantages:
+Limited in variable count, i.e., URL length is 255
+Data visible in URL
+Cannot send characters like &, +, space, etc
+
+
+Cookies
+A text file created by the server & is stored in the client machine
+A user can store his authenticated sign-in on his computer itself
+Maximum size of a cookie is 4 KB
+Number of cookies per browser:
+➤ 20 in old browsers
+➤ 300 in new browsers
+To work with cookies, we require the System.Web namespace
+A cookie is a name–value pair collection
+
+
+Types of Cookies
+Persistent cookies	Non-Persistent cookies
+These are permanent cookies	These are temporary cookies
+Stored in client hard drive	Stored in client browser memory
+Stores text file as permanent	Stores in browser as temporary
+Browser independent	Browser dependent
+Need to specify expiry	When we don’t specify the expiry, the cookie is non-persistent
+
+Advantages & Disadvantages – Cookies
+
+Advantages
+User Friendly
+Availability
+Convenience
+Marketing
+Configurations
+Server Requirement
+
+Disadvantages
+Browser Impacts
+Security Risks
+Size Limitations
+Privacy Concerns
+Manual Disabling
+Encoding Information
+
+HttpCookie Class
+
+Used to create and manipulate cookies. It includes two cookie collections
+The collection accessed through the cookies collection of the HttpRequest object contains cookies
+Transmitted by the client to the server in the Cookie header
+The collection accessed through the cookies collection of the HttpResponse object contains new cookies created on the server
+
+These are transmitted to the client in the Set-Cookie HTTP response header
+➤ Response.Cookies.Add() : used to add a cookie into the cookie object
+➤ Request.Cookies[] : used to read data from cookies
+
+
+
+
+HttpCookie Class
+Property name	Description
+Domain	Specifies which domain is associated with this cookie. Default is the current domain
+Expires	A DateTime value specifies the expiry time of the cookie
+Secure	Set this if cookies are transmitted over SSL
+Name	Cookie name
+Value	Cookie value (string)
+
+
+
+How to Determine if Cookie is Enabled
+
+To programmatically allow cookies to be enabled in your application
+
+In the page_load event, the below code has to be written:
+
+private void page_load event
+{
+    If ( Request.Browser.Cookies == true )
+        Response.Write("Browser enabled cookies");
+    else
+        Response.Write("Browser disabled cookies");
+}
+
+
+
+
+Topics
+
+Cache
+Cache memory location
+Types of cache
+• Output cache
+• Data Cache
+• Fragment cache
+
+Web user control
+Creating web user control
+Web.Config file
+
+
+Objectives
+At the end of this module you will be able to:
+Get complete idea on Cache
+Know about different types of cache
+Create web user control
+
+
+
+Cache
+An in-memory area created by the web server to store data temporarily
+Stores data objects, parts of a page, etc.
+Allows you to avoid recreating information
+
+If the page output is available in the cache:
+➤ It will render from cache
+➤ Execute the page
+➤ Render the output to browser
+➤ Cache for specified time
+
+Caching helps to achieve three aspects of QoS:
+Performance
+Scalability
+Availability
+
+
+Cache Memory Location
+Location of Cache memory	Description
+Client	Maintains the cache in the client machine, in the client browser itself
+Server	Maintains the cache at server computer (web server)
+Proxy	In LAN, the server computer
+ServerAndClient	Both the places
+None	Not to maintain the cache
+Any	Depends upon its availability, the cache memory stored
+Downstream	Browser and Proxy
+
+
+Advantages & Disadvantages – Cache
+
+Advantages
+Reduce load on Web Services / Database
+Increase Performance
+Reliability
+
+Disadvantages
+Could run into issues syncing caches
+Increased Maintenance
+Scalability Issues
+
+Cache Types
+Types of cache
+
+Output Cache
+Page-level caching
+
+Data Cache
+Variable level caching
+
+Fragment Cache
+User control caching
+
+
+Output Cache
+One of the easiest ways of caching
+Caching is done at the page level
+Requires giving the duration for caching and the attribute for caching
+To make a webpage use Output page cache, the @OutputCache directive is used
+@OutputCache should exist only on a webpage; it cannot be used on a master page
+Syntax:
+<%@ OutputCache VaryByParam="none" duration="10" %>
+
+
+Output Cache Properties
+
+To place separate cache for a set of controls
+» VaryByParam="TextBox1;TextBox2"
+
+To place separate cache for all controls
+» VaryByParam="*"
+
+Output Cache Properties Table
+Property	Description
+Duration	Used to specify number of seconds the page is to be cached
+VaryByParam	Used to specify whether the cache is related to individual controls or not
+VaryByParam = none	Makes a common cache for every user/webpage
+VaryByParam = "TextBox1"	Used to maintain a separate cache for every page on control TextBox1
+
+
+Data Cache
+The process of storing data in memory for quick access
+One of the more common items stored in a cache in a web application environment is commonly displayed database values
+
+Helps in caching such information, rather than relying on repeated database calls
+The demand on the web server and database server's system resources is decreased
+The web application’s scalability is increased
+
+Where is it used?
+Used to store the data in variables which can be used in regular calls
+
+
+
+Fragment Cache
+By default, Output Cache is a webpage cache (it will cache the entire page)
+Fragment Cache is the part of page cache
+It is actually caching a user control that can be used in a base web form page
+The process of caching part of a web page is called Fragment Cache
+Also called Partial Caching
+@OutputCache used on user controls is called Fragment Cache
+
+
+
+Web User Control
+ASP.NET user controls let you encapsulate the functionality of multiple server controls in a unit
+A collection of existing controls
+User controls are made up of one or more ASP.NET server controls
+Controls such as Button controls, TextBox controls, etc.
+Also contains code that is required for the controls to perform the function that you want to accomplish
+Helps in the re-usability of code as well as UI
+User control does not have HTML form tag
+Namespace to be imported: System.Web.UI.UserControl
+
+
+Web User Control
+
+Difference between Web Page and Web User Control
+
+Web Page	Web User Control
+Contains .aspx	Contains .ascx
+<form></form>	No form element
+@Page	@control
+It is a UI	It is part of UI
+
+
+Attributes for Web User Control
+
+User control requires directives like:
+
+@Page
+» Refers to the web page type
+
+@Control directive
+» All the user controls will be added with this tag
+» This directive specifies the current page belongs to web user control
+
+@Register
+» This attribute is used to register a web user control to the web form
+» The above attribute helps in registering the control to the current web page
+
+
+
+Web.config File
+Web.config file is a configuration file
+Contains configuration details of the current directory in a web application
+It is basically an XML file that contains XML tags
+Each and every folder can have one web.config file
+The settings available in the web.config file will be available in all pages of the respective folder
+Web.config can be used to place settings like Connection string, appsettings, Security Settings (authentication, authorization), sessionState, etc.
+The namespace for using web.config file is System.Configuration
+
+
+Topics
+
+Server side: State management techniques
+Session
+Session Events
+Session Vs Cookie
+Application state
+Application state events
+
+Objectives
+At the end of this module you will be able to:
+Introduction to Server side State Management Techniques
+Know the difference between Session and Cookie
+
+
+
+Server Side State Management Techniques: Session
+
+Session
+Used to store the data which can be accessible on all the pages in the website
+Maintains the state of the data to be accessed in the entire session
+It is an instance of the System.Web.SessionState.HttpSessionState class
+Sessions are basically stored in server memory, called In-Process
+Can also store session as Out-of-Process
+Session state leads to scalability issues, so it must be used thoughtfully
+Sessions are created by the web server and the object of the session comes from HttpSession
+
+
+Advantages & Disadvantages – Session
+
+Advantages:
+Easy to implement
+Ensures data durability
+Works in the multi-process configuration, ensures platform scalability
+
+Disadvantages:
+Not advisable to use session state when working with large sum of data.
+Too many variables in the memory affect performance.
+
+
+Session (Contd.)
+We can declare session variables using the following syntax:
+Session["uname"] = txtUname.Text;
+
+To get value from session:
+label1.Text = Session["uname"].ToString();
+
+The events of sessions are Session_Start and Session_End.
+Session Events
+
+The events of sessions are Session_Start and Session_End:
+
+Session_Start	Session_End
+Event is raised at every user session start	Event is raised whenever a user logs out
+Event contains definition to store username logged in	Event contains definition to abandon the session
+
+Methods:
+Application.Lock : Used to lock the application until the session operation is complete
+Application.UnLock : Used to unlock the user once the session operation is complete
+
+Session vs Cookie
+Session	Cookie
+Stored in Web Server	Stored on Client Machine
+Session expires when the user logs out; Session is a single-user global data	Text file that stores one user's data
+Session stored in sessionMode = InProc, StateServer, SqlServer, Custom	Stored in Browser or Text File
+Advantages & Disadvantages – Session
+Advantages:
+Easy to implement
+Ensures data durability
+Works in multi-process configuration, ensures platform scalability
+
+Disadvantages:
+Not advisable to use session state when working with large amounts of data
+Too many variables in memory affect performance
+
+
+
+Why Application State?
+
+Application object is used to maintain multi-user global data.
+Using this object, the state can be maintained throughout the application.
+
+What is global.asax?
+It is a file that contains application-level events.
+Application State variables are available across all pages and across all sessions.
+Application State variables are like multi-user global data (whereas session is single-user global data).
+
+Application State
+Used to maintain state at the application level.
+Data stored in application state is common for all users.
+Can be accessed anywhere in the application.
+Used to handle situations like application started, application stopped, session started, session stopped, etc.
+Using this state, we can identify how many users have logged in, logged out, etc.
+
+Advantages & Disadvantages – Application
+👍 Advantages
+Application variable data is multi-user global data stored in memory.
+Easy to access.
+Fast retrieval.
+
+👎 Disadvantages
+Limited durability of data.
+Limited performance.
+
+Application vs Session
+Application	Session
+Application variables are all users’ global data	Single user global variable
+Stored only in the web server	Stored in different places like InProc, StateServer, SQL Server, Custom
+Cleared only when the process hosting the application is restarted	Cleared whenever the timeout is reached
+All users can read and edit data	Only logged-in users can access data
+
+
+
+Application State Events
+Event	Purpose
+Application_Start	This event gets raised whenever the application is restarted. This event contains code that initializes the number of users = 0.
+Application_Stop	This event gets raised whenever the application is stopped.
+Application_Error	This event is raised when an application fails to handle an exception.
+
+
+
+Why Ajax?
+
+Web pages built with ASP.NET Web server controls perform postbacks
+Postbacks are initiated by a user action on the page, such as clicking a button
+In the response, the server renders a new page
+Frequently, this re-renders controls and text that did not change between postbacks
+With partial-page rendering, you can refresh individual regions of the page asynchronously
+This makes the page more responsive to the user
+You can implement partial-page rendering using ASP.NET AJAX Web server controls
+Optionally, write client script that uses the APIs in the Microsoft AJAX Library
+
+
+
+What is Ajax?
+
+Ajax – Asynchronous JavaScript and XML
+A development technique used to create interactive web applications or rich internet applications
+A technique used on the client browser to create asynchronous web applications
+Using Ajax, web applications will pass data to and retrieve data from a web server asynchronously
+Ajax is the feature that provides partial postback
+Regular postback uses HttpRequest
+Postback using Ajax uses XMLHttpRequest
+
+
+Advantages (AJAX)
+
+Reduces the traffic that travels between the client and the server.
+No cross-browser pain.
+Better interactivity and responsiveness.
+With AJAX, several multi-purpose applications and features can be handled using a single web page (SPA).
+APIs are good because they work with HTTP methods and JavaScript.
+
+
+
+Disadvantages (AJAX)
+
+Search engines like Google would not be able to index an AJAX application
+It is totally built in JavaScript code; if any user disables JS in the browser, it won't work
+The server information cannot be accessed within AJAX
+Security is less in AJAX applications as all the files are downloaded on the client side
+The data of all requests is URL-encoded, which increases the size of the request
+
+What is PostBack?
+What is Partial PostBack?
+Submitting part of the page to the server instead of full-page submission
+Only part of the page will be loaded
+Whereas postback creates a new page as a result
+
+
+
+
+Ajax Extension:
+
+A category of controls introduced in Visual Studio to handle AJAX features
+
+What is ScriptManager?
+A control used to avail the advantage of ASP.NET AJAX framework
+Required for every ASP.NET page which needs AJAX features
+Compulsory as the first control when you want to use AJAX controls
+
+What is UpdatePanel?
+Control used to avail the Partial PostBack feature
+If the control does not exist, a full PostBack will occur
+This method will invoke implicitly in parallel for every specified number of seconds (Ajax Timer)
+
+
+
+
+Ajax Extensions (Contd.)
+What is ScriptManager?
+
+The ScriptManager control takes care of the client-side script for all the server-side controls.
+
+Syntax:
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+
+
+
