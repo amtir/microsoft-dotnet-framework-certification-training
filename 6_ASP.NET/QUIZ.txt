@@ -1,0 +1,342 @@
+
+ASP.NET
+
+
+QUIZ
+
+1 - 1
+Which of the following is not an ASP component
+2 Marks
+linkcounter
+counter
+adrotator
+fileaccess
+
+
+fileaccess
+
+Explanation:
+In classic ASP (Active Server Pages), common built-in components include:
+AdRotator – displays rotating banner ads.
+Counter / LinkCounter – track visits or link clicks (custom or sample components).
+However, FileAccess is not an ASP component — it refers to file handling, which is done using the FileSystemObject instead.
+
+2 - How do you get information from a form that is submitted using a "post" method
+2 Marks
+request query string
+request.form
+response.write
+response.writeln
+
+Request.Form
+Explanation:
+When a form is submitted using the POST method in ASP.NET, the form data is sent in the HTTP request body.
+You can access this data using:
+Request.Form["controlName"]
+
+Summary:
+Request.QueryString → used for GET method (data in URL).
+Request.Form → used for POST method (data in request body).
+Response.Write / Response.Writeln → used to output data to the browser, not to retrieve it.
+
+
+3 - 3
+Which of the following is the Microsoft IIS server running,handling ASP.NET requests among other things
+2 Marks
+aspnet_isapi.dll
+aspnet_wp.exe
+x inetinfo.exe
+none of the above
+
+inetinfo.exe
+
+Explanation:
+The inetinfo.exe process is the main executable for Microsoft IIS (Internet Information Services).
+It handles:
+Web service requests (HTTP)
+SMTP, FTP, and NNTP services
+
+And it manages ASP.NET requests by coordinating with components like aspnet_isapi.dll and aspnet_wp.exe.
+Summary:
+Component	Role
+inetinfo.exe	IIS main process — handles and routes web requests
+aspnet_isapi.dll	ISAPI extension that passes ASP.NET requests to the runtime
+aspnet_wp.exe	ASP.NET worker process (used in older IIS versions like IIS 5)
+
+4 - 4
+For separating server side code on ASP.NET page,what programming model should be used?
+2 Marks
+separation model
+x code-behind model
+in-line model
+client server madel
+
+
+Code-behind model
+Explanation:
+In ASP.NET, the code-behind model is used to separate the server-side logic (C#/VB code) from the HTML markup on the page.
+How it works:
+The .aspx file contains HTML and server control declarations.
+The .aspx.cs (or .aspx.vb) file contains the C# (or VB) server-side code.
+
+This promotes clean separation, better maintainability, and reusability.
+Therefore, the correct answer is Code-behind model.
+
+
+5 - 5
+What is the sequence in which ASP.NET events are processed.A.pageload B.page_unload C.pageinit D.control events
+2 Marks
+ADCB
+CABD
+x CADB
+ACDB
+
+ACDB
+Explanation:
+The correct sequence of ASP.NET Page Life Cycle events is:
+A – Page_Init → Page and controls are initialized.
+C – Page_Load → Page loads with data and controls populated.
+D – Control Events → Events like button clicks are handled.
+B – Page_Unload → Cleanup is performed before the page is unloaded.
+Therefore, the correct order is:
+Page_Init → Page_Load → Control Events → Page_Unload → (ACDB)
+
+
+6 - 6
+An alternate way of displaying text on web page using
+2 Marks
+x asp:label
+asp:listitem
+asp:button
+asp:radiobutton
+
+asp:Label
+Explanation:
+The <asp:Label> control is used to display text on a web page in ASP.NET.
+It is the server-side equivalent of writing plain text or HTML labels, and it allows you to:
+Set text dynamically from the server (e.g., Label1.Text = "Hello";)
+Format or style the text easily.
+Summary:
+Control	Purpose
+asp:Label	Display text
+asp:ListItem	Used within DropDownList or ListBox
+asp:Button	Triggers postback events
+asp:RadioButton	For user selection options
+
+
+7 - 7
+In which event all the controls are fully loded
+2 Marks
+page_init
+x page_load
+control events
+page_unload
+
+
+Page_Load
+
+Explanation:
+During the Page_Load event in the ASP.NET page life cycle, all controls are fully loaded and initialized — meaning:
+Their properties are restored from ViewState.
+They are ready to be accessed and modified in your code.
+Summary of key events:
+
+Event	Description
+Page_Init	Controls are initialized, but not yet loaded with data.
+Page_Load	All controls are fully loaded and can be safely used.
+Control Events	Occur after Page_Load (e.g., button clicks).
+Page_Unload	Cleanup before page is destroyed.
+Therefore, the correct answer is Page_Load.
+
+
+
+8 - 8
+What is the name of the property of ASP.NET that you can query to determine that a ASP.NET page is being requested not data being submitted to web server
+2 Marks
+firstget
+initialized
+includesdata
+x is postback
+
+IsPostBack
+Explanation:
+The IsPostBack property of an ASP.NET Page object indicates whether:
+The page is being loaded for the first time (IsPostBack == false), or
+The page is being reloaded due to a form submission (a postback — IsPostBack == true).
+
+Example:
+protected void Page_Load(object sender, EventArgs e)
+{
+    if (!IsPostBack)
+    {
+        // Page is requested for the first time
+    }
+}
+
+Therefore, the correct answer is IsPostBack.
+
+
+9 - 9
+Web.config file is used...
+2 Marks
+To configure the web browser
+Configures the time that the server-side codebehind module is called
+To store the global information and variable definitions for the application
+To configure the web server
+
+
+To store the global information and variable definitions for the application
+Explanation:
+The Web.config file in ASP.NET is an XML-based configuration file used to define settings that apply to a web application, such as:
+Database connection strings
+Session state configuration
+Authentication and authorization rules
+Custom error pages
+Application-level variables
+
+Summary:
+Option	Explanation
+Configure web browser	 Browser settings are not controlled here
+Configure code-behind timing  Not applicable
+Store global app info	Correct — this is the purpose of Web.config
+Configure web server	 That’s done via IIS, not Web.config
+
+Therefore, the correct answer is “To store the global information and variable definitions for the application.”
+
+
+
+10 - 0
+What class does the ASP.NET Web Form class inherit from by default?
+2 Marks
+System.Web.GUI.Page
+System.Web.UI.Page
+x System.Web.UI.Form
+System.Web.Form
+
+System.Web.UI.Page
+Explanation:
+Every ASP.NET Web Form (.aspx page) is implemented as a class that inherits from the System.Web.UI.Page class.
+This base class provides:
+The page lifecycle (Init, Load, Render, Unload, etc.)
+Access to server controls, ViewState, and Request/Response objects.
+
+Example (auto-generated code-behind):
+public partial class WebForm1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+    }
+}
+Therefore, the correct answer is System.Web.UI.Page.
+
+
+11 - 11
+Choose the option where Postback occurs.
+2 Marks
+HTMLForms
+x Webforms
+winforms
+Assemblies
+
+WebForms
+Explanation:
+Postback is the process in ASP.NET Web Forms where the page is sent to the server, processed, and then returned to the client browser.
+It happens when a user interacts with a control that causes the form to submit — for example, clicking an ASP.NET Button (<asp:Button>).
+
+Summary:
+Option	Description
+HTMLForms	Regular HTML form, no ASP.NET postback mechanism
+WebForms	ASP.NET page that supports postback events
+WinForms	Desktop application — no concept of postback
+Assemblies	Code libraries — not UI related
+Therefore, the correct answer is WebForms.
+
+12 - 12
+File extension used for ASP.NET files
+2 Marks
+.Web
+x .ASPX
+.CS
+.ASP
+
+.ASPX
+Explanation:
+ASP.NET web pages use the .aspx file extension. These files contain:
+HTML markup
+Server controls (like <asp:Button>, <asp:Label>)
+And are linked to a code-behind file (usually .aspx.cs or .aspx.vb).
+
+Summary:
+Extension	Description
+.ASPX	ASP.NET Web Form page
+.ASP	Classic ASP page (old technology)
+.CS	C# code file (used for code-behind)
+.WEB	Not used in ASP.NET
+
+Therefore, the correct answer is .ASPX.
+
+13 - 13
+An alternative way of displaying text on web page using
+2 Marks
+x asp:label
+asp:listitem
+asp:button
+asp:TextBox
+
+asp:Label
+Explanation:
+The <asp:Label> control is used to display static or dynamic text on a web page in ASP.NET.
+It’s the simplest way to show text that can be changed from the server side using code like:
+Label1.Text = "Welcome to ASP.NET!";
+
+Summary:
+Control	Purpose
+asp:Label	Display text on a webpage
+asp:ListItem	Used inside list controls (e.g., DropDownList)
+asp:Button	Triggers postback events
+asp:TextBox	For user input, not for displaying static text
+Therefore, the correct answer is asp:Label.
+
+
+14 - 14
+Which of the following ASP.NET object encapsulates the state of the client?
+2 Marks
+x Session object
+Application object
+Response object
+Server object
+
+Session object
+Explanation:
+The Session object in ASP.NET is used to store and manage information about a single user (client) across multiple requests.
+It maintains the state of the client during a browsing session — for example, keeping a user’s login info or shopping cart data.
+
+Summary:
+Object	Description
+Session	Stores client-specific data (user state)
+Application	Stores data shared by all users
+Response	Sends output to the client browser
+Server	Provides access to server-side utilities
+Therefore, the correct answer is Session object.
+
+
+15 - 15
+We can manage states in asp.net application using
+2 Marks
+Session Objects
+Application Objects
+Viewstate
+All of the above
+
+
+
+
+
+
+
+
+
+
+
+
+
