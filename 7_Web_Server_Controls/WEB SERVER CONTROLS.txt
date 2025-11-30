@@ -1,0 +1,31 @@
+WEB SERVER CONTROLS
+
+Part1  Web Server ControlsPart
+
+
+Part2  Common Controls and Event handling
+
+
+Part3  Data Bound Controls and XML
+Data Bound Controls and XML 
+
+
+Data Source=laptop-85mtf1dv\;Initial Catalog=EmployeeDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True
+
+
+
+
+
+Installation Guide
+Introduction to .NET
+Introduction to C# and Oops using C#.NET
+Windows Forms using C#.NET
+ADO.NET- Data Access from SQL
+Collections and Assemblies
+ASP.NET
+Web Server Controls
+Part 1: Web Server Controls Part 2: Common Controls and Event handling Part 3: Data Bound Controls and XMLPresentationQuiz VIIAssignmentDemo
+LINQ, Web Architecture
+State Management, Ajax
+Security and Web services
+Certification Project

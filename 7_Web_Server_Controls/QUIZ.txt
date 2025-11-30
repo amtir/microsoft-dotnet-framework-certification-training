@@ -1,0 +1,178 @@
+
+
+WEB SERVER CONTROLS
+QUIZ 
+
+1 - Where are Html controls processed?
+2 Marks
+Server side
+x Client side
+Both  A & B
+Inside application
+
+client side
+Explanation:
+HTML controls (like <input>, <button>, <select>, etc.) are standard HTML elements that run entirely in the client’s browser — they are not processed by the server unless they are explicitly converted to server controls (by adding runat="server").
+
+So:
+HTML controls → Client side
+ASP.NET Server controls (<asp:Button>, <asp:TextBox>) → Server side
+
+
+2 - 
+2 Where are Web server  controls processed?
+2 Marks
+x Server side
+Client side
+Inside application
+Both  A & B
+
+Server side
+Explanation:
+Web Server Controls (such as <asp:Button>, <asp:TextBox>, <asp:GridView>, etc.) are processed on the server side.
+They are rendered as standard HTML for the client browser.
+Their events (like Click, TextChanged, etc.) are handled on the server during the ASP.NET page lifecycle.
+In short:
+HTML controls → Client side
+Web server controls → Server side
+
+3 - 3
+To display a list of clients &  to edit the clients on a webpage.Which webcontrol is best suited in this scenario
+2 Marks
+Table control
+x Gridview
+Formview control
+Detailsview
+
+The GridView control in ASP.NET is ideal when you need to:
+Display a list of records (like clients) in a tabular format, and
+Provide editing, deleting, and updating functionality directly in the same grid.
+Summary:
+Control	Purpose
+Table	Static layout only — no data binding or edit support
+GridView	Best for displaying & editing multiple records
+FormView	Displays one record at a time, customizable layout
+DetailsView	Displays one record at a time in a table format
+Hence, GridView is the most suitable control for listing and editing clients.
+
+4 - 4
+From performance point of view which is faster
+2 Marks
+Datalist
+Datagrid
+x Repeater
+Dataview
+
+Repeater
+Explanation:
+From a performance point of view, the Repeater control is the fastest among data-bound controls because:
+It has no built-in layout or extra features (like paging, sorting, or selection).
+It simply renders the data using templates — minimal overhead.
+Performance ranking (fast → slower):
+Repeater → DataList → DataGrid → GridView
+Repeater is the correct answer.
+
+5 - 5
+Where is the viewstate information stored?
+2 Marks
+In the form
+In TAG field
+In html Runat field
+x In the HTML hidden field
+
+In the HTML hidden field
+Explanation:
+In ASP.NET, ViewState stores the state of page and control values between postbacks.
+It’s serialized and encoded into a hidden field named __VIEWSTATE within the HTML form.
+When the page is submitted, this hidden field’s data is sent back to the server to restore control states.
+Summary:
+Stored in: <input type="hidden" name="__VIEWSTATE" ... />
+Purpose: Preserve page and control values between requests
+Location: HTML hidden field inside the form
+
+6 - 6
+Which control helps to display all rows of datatable
+2 Marks
+ColumnView
+x Gridview
+Detailsview
+All of the above
+
+GridView
+Explanation:
+The GridView control is designed to display all rows from a DataTable (or any tabular data source) in a structured, tabular format.
+GridView → Displays multiple rows and columns (ideal for full table display).
+DetailsView → Displays one record at a time.
+ColumnView →  Not an ASP.NET control (it’s used in other frameworks like DevExpress).
+Therefore, the correct answer is GridView.
+
+
+7 - 7
+Properties of Literal?
+2 Marks
+Color
+size
+Font
+x None of the above
+
+None of the above
+Explanation:
+The Literal control in ASP.NET is a very lightweight control used to display static text or HTML on a page.
+It does not support style-related properties like Color, Size, or Font.
+It only has simple properties such as:
+Text → the content to display
+Mode → how the text is rendered (Encode, PassThrough, or Transform)
+Therefore, None of the above is correct.
+
+8 - 8
+Which control helps to display single row of datatable
+2 Marks
+ColumnView
+Gridview
+x Detailsview
+All of the above
+
+DetailsView
+Explanation:
+The DetailsView control in ASP.NET is specifically designed to display a single row (or record) from a DataTable or data source at a time.
+It shows each field in a separate row (like a form), and it can also support editing, inserting, and deleting that one record.
+Summary:
+Control	Displays
+GridView	Multiple rows (tabular view)
+DetailsView	 Single row (record)
+ColumnView	 Not a standard ASP.NET control
+Hence, the correct answer is DetailsView.
+
+
+9 - 9
+Choose List controls
+2 Marks
+DropDownList
+ListBox
+CheckBoxList
+x All of the above
+
+All of the above
+Explanation:
+In ASP.NET, all these are List controls — they display lists of items and allow users to make selections.
+Control	Description
+DropDownList	Displays items in a dropdown menu (single selection).
+ListBox	Displays a scrollable list of items (single or multiple selection).
+CheckBoxList	Displays a list of checkboxes (multiple selections).
+
+
+10 - 10
+Advantages of Data Binding
+2 Marks
+can refer to the database without writing code
+data manipulation
+can refer to the database with writing code
+x Both A & B
+
+Both A & B
+Explanation:
+Data Binding in ASP.NET provides several advantages:
+(A) You can connect UI controls (like GridView, DropDownList, etc.) to a database or data source with minimal or no code.
+(B) You can also perform data manipulation — such as display, update, insert, and delete — easily using data-bound controls.
+Therefore, the correct answer is Both A & B.
+

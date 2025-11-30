@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<productdata>
+	<product category="toy">
+		<productid>101</productid>
+		<productname>Car</productname>
+		<description>Suitable to age 3 - 5 years</description>
+		<price>50</price>
+	</product>
+	<product category="toy">
+		<productid>102</productid>
+		<productname>BabieDoll</productname>
+		<description>Suitable to age 7 - 9 years</description>
+		<price>100</price>
+	</product>
+</productdata>
