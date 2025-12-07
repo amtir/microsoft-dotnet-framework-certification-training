@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site.master.cs" Inherits="LibraryWebApp.Site" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Library Management</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div style="background:#333;color:white;padding:10px;">
+            <span style="font-size:24px;">Library Management System</span>
+            <span style="float:right;">
+                <asp:Label ID="lblUser" runat="server"></asp:Label>
+                &nbsp;|
+                <asp:LinkButton ID="lnkLogout" runat="server"
+                    OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+            </span>
+        </div>
+
+        <!-- Menu -->
+<div style="background:#eee;padding:8px;">
+    <asp:Panel ID="pnlAdminMenu" runat="server">
+        <asp:HyperLink ID="lnkAdminHome" runat="server"
+            NavigateUrl="~/AdminHome.aspx">Admin Home</asp:HyperLink> |
+        <asp:HyperLink ID="lnkAddBranch" runat="server"
+            NavigateUrl="~/AddBranch.aspx">Add Branch</asp:HyperLink> |
+        <asp:HyperLink ID="lnkAddPublication" runat="server"
+            NavigateUrl="~/AddPublication.aspx">Add Publication</asp:HyperLink> |
+        <asp:HyperLink ID="lnkAddBook" runat="server"
+            NavigateUrl="~/AddBook.aspx">Add Book</asp:HyperLink> | 
+        <asp:HyperLink ID="lnkIssueBook" runat="server"
+        NavigateUrl="~/IssueBook.aspx">Issue Book</asp:HyperLink> | 
+        <asp:HyperLink ID="lnkReturnBook" runat="server"
+        NavigateUrl="~/ReturnBook.aspx">Return Book</asp:HyperLink> |
+
+        <asp:HyperLink ID="lnkPenaltyReport" runat="server"
+    NavigateUrl="~/PenaltyReport.aspx">Penalty Report</asp:HyperLink> 
+
+    </asp:Panel>
+
+    <asp:Panel ID="pnlStudentMenu" runat="server">
+        <asp:HyperLink ID="lnkStudentHome" runat="server"
+            NavigateUrl="~/StudentHome.aspx">Student Home</asp:HyperLink> |
+        <asp:HyperLink ID="lnkMyAccount" runat="server"
+            NavigateUrl="~/MyAccount.aspx">My Account</asp:HyperLink> |
+        <asp:HyperLink ID="lnkMyReport" runat="server"
+            NavigateUrl="~/MyReport.aspx">My Report</asp:HyperLink>
+    </asp:Panel>
+</div>
+
+
+        <!-- Page content -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <!-- Footer -->
+        <div style="background:#333;color:white;padding:5px;margin-top:20px;text-align:center;">
+            &copy; <%: DateTime.Now.Year %> Library
+        </div>
+    </form>
+</body>
+</html>
